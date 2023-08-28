@@ -29,13 +29,13 @@ var environmentConfigurationMap = {
     environmentAbbreviation: 'prd'
     appServicePlan: {
       sku: {
-        name: 'Standard'
+        name: 'F1'
       }
     }
     sqlDatabase: {
       sku: {
-        name: 'Standard'
-        tier: 'Standard'
+        name: 'Basic'
+        tier: 'Basic'
       }
     }
   }
@@ -43,13 +43,13 @@ var environmentConfigurationMap = {
     environmentAbbreviation: 'stg'
     appServicePlan: {
       sku: {
-        name: 'B1'
+        name: 'F1'
       }
     }
     sqlDatabase: {
       sku: {
-        name: 'Standard'
-        tier: 'Standard'
+        name: 'Basic'
+        tier: 'Basic'
       }
     }
   }
@@ -57,13 +57,13 @@ var environmentConfigurationMap = {
     environmentAbbreviation: 'dev'
     appServicePlan: {
       sku: {
-        name: 'B1'
+        name: 'F1'
       }
     }
     sqlDatabase: {
       sku: {
-        name: 'Standard'
-        tier: 'Standard'
+        name: 'Basic'
+        tier: 'Basic'
       }
     }
   }
