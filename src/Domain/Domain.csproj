@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>Dotnet8Clean.Domain</RootNamespace>
+    <AssemblyName>Dotnet8Clean.Domain</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" />
+  </ItemGroup>
+
+</Project>
