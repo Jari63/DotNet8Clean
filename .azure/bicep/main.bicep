@@ -235,6 +235,7 @@ resource keyVault_AccessPolicy 'Microsoft.KeyVault/vaults/accessPolicies@2022-07
         permissions: {
           keys: [
             'Get'
+            'List'
           ]
           secrets: [
             'Get'
