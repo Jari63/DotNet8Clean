@@ -63,6 +63,8 @@ jobs:
            sqlAdministratorUsername=${{ vars.AZURE_SQL_ADMINISTRATOR_USERNAME }}
            sqlAdministratorPassword=${{ secrets.AZURE_SQL_ADMINISTRATOR_PASSWORD }}
            projectName=${{ vars.PROJECT_NAME }}
+           azureADUserName=${{ inputs.azureADUserName }}
+           azureADObjectID=${{ inputs.azureADObjectID }}
          additionalArguments: --what-if
  
   deploy:
@@ -101,6 +103,8 @@ jobs:
            sqlAdministratorUsername=${{ vars.AZURE_SQL_ADMINISTRATOR_USERNAME }}
            sqlAdministratorPassword=${{ secrets.AZURE_SQL_ADMINISTRATOR_PASSWORD }}
            projectName=${{ vars.PROJECT_NAME }}
+           azureADUserName=${{ inputs.azureADUserName }}
+           azureADObjectID=${{ inputs.azureADObjectID }}
 
     - name: Initialise database
       run: |
