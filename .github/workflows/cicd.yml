@@ -22,6 +22,8 @@ jobs:
     needs: [ build ]
     with:
       environmentName: Development
+      azureADUserName: sql_admin
+      azureADObjectID: f5bdd624-1bee-4958-bf7a-927008030e53
 
   deploy-staging:
     uses: ./.github/workflows/deploy.yml
@@ -29,6 +31,8 @@ jobs:
     needs: [ deploy-development ]
     with:
       environmentName: Staging
+      azureADUserName: sql_admin
+      azureADObjectID: f5bdd624-1bee-4958-bf7a-927008030e53
 
   deploy-production:
     uses: ./.github/workflows/deploy.yml
@@ -36,3 +40,5 @@ jobs:
     needs: [ deploy-staging ]
     with:
       environmentName: Production
+      azureADUserName: sql_admin
+      azureADObjectID: f5bdd624-1bee-4958-bf7a-927008030e53

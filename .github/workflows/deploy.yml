@@ -6,6 +6,12 @@ on:
       environmentName:
         required: true
         type: string
+      azureADUserName:
+        required: true
+        type: string
+      azureADObjectID:
+        required: true
+        type: string
 
 permissions:
   id-token: write
@@ -41,6 +47,8 @@ jobs:
            sqlAdministratorUsername=${{ vars.AZURE_SQL_ADMINISTRATOR_USERNAME }}
            sqlAdministratorPassword=${{ secrets.AZURE_SQL_ADMINISTRATOR_PASSWORD }}
            projectName=${{ vars.PROJECT_NAME }}
+           azureADUserName=${{ inputs.azureADUserName }}
+           azureADObjectID=${{ inputs.azureADObjectID }}
          deploymentMode: Validate
 
      - if: inputs.environmentName != 'Development'

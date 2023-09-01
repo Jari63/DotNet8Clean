@@ -16,6 +16,12 @@ param resourceNameSuffix string = uniqueString(resourceGroup().id)
 @description('The administrator login username for the SQL server.')
 param sqlAdministratorUsername string
 
+@description('Your Azure AD user identity (this identity will be granted admin rights to the Azure SQL instance).')
+param azureADUserName string
+
+@description('Object ID for your Azure AD user identity (see the README.md file in the Azure Quickstart guide for instructions on how to get your Azure AD user object ID).')
+param azureADObjectID string
+
 @secure()
 @description('The administrator login password for the SQL server.')
 param sqlAdministratorPassword string
@@ -267,6 +273,13 @@ resource sqlServer 'Microsoft.Sql/servers@2021-02-01-preview' = {
   properties: {
     administratorLogin: sqlAdministratorUsername
     administratorLoginPassword: sqlAdministratorPassword
+    administrators:{
+      administratorType: 'ActiveDirectory'
+      azureADOnlyAuthentication: false
+      login: azureADUserName
+      sid: azureADObjectID
+      tenantId: subscription().tenantId
+    }
   }
 }
 
